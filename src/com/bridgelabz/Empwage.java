@@ -7,16 +7,16 @@ public class Empwage {
         int PART_TIME = 2;
         int wageHrs;
         int empwage;
-        double check = Math.floor(Math.random() * 10) % 3;
-        if (check == FULL_TIME){
-           wageHrs = 8;
-        }
-        else if(check == PART_TIME){
-            wageHrs = 4;
-        }
-        else
-        {
-          wageHrs = 0;
+        int check = (int) Math.floor(Math.random() * 10) % 3;
+        switch (check ){
+            case 1 :
+                wageHrs = 8;
+                break;
+            case 2 :
+                wageHrs = 4;
+                break;
+            default:
+                wageHrs = 0;
         }
          empwage = WAGE_PER_HOUR*wageHrs;
         System.out.println("employee wage = " + empwage);
