@@ -1,15 +1,18 @@
 package com.bridgelabz;
 
 public class Empwage {
-    public static void main(String[] args) {
-        int FULL_TIME = 1;
-        int PART_TIME = 2;
-        int WAGE_PER_HOUR = 20;
-        int WAGE_PER_MONTH = 20;
+    public static final int FULL_TIME = 1;
+    public static final int PART_TIME = 2;
+    public static final int WAGE_PER_HOUR = 20;
+    public static final int MAX_DAY = 20;
+    public static final int MAX_HRS = 100;
+
+    static void ComputeWage() {
         int wageHrs;
-        int empwage;
-        int total = 0;
-        for (int i = 0; i < WAGE_PER_MONTH; i++) {
+        int totalWorkingDays = 0;
+        int totalEmpHrs = 0;
+        while (totalWorkingDays < MAX_DAY && totalEmpHrs <= MAX_HRS) {
+            totalWorkingDays++;
             int check = (int) Math.floor(Math.random() * 10) % 3;
             switch (check) {
                 case 1:
@@ -21,10 +24,17 @@ public class Empwage {
                 default:
                     wageHrs = 0;
             }
-            empwage = WAGE_PER_HOUR * wageHrs;
-            System.out.println("employee wage = " + empwage);
-            total += empwage;
+            totalEmpHrs += wageHrs;
+            System.out.println("day:" + totalWorkingDays + " emp hrs: " + wageHrs);
+
         }
-        System.out.println("totalwage = "+total);
+        int totalEmpWage = totalEmpHrs * WAGE_PER_HOUR;
+        System.out.println("total wage = " + totalEmpWage);
+    }
+
+
+    public static void main(String[] args) {
+      Empwage empwage = new Empwage();
+      empwage.ComputeWage();
     }
 }
