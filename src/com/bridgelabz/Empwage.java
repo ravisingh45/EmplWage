@@ -29,9 +29,7 @@ public class Empwage {
 
 
     public static void main(String[] args) {
-      Empwage Dmart = new Empwage();
-        Dmart.ComputeWage("dmart",250,23,100);
-        Empwage Vmart = new Empwage();
-        Vmart.ComputeWage("vmart",500,23,98);
+        ComputeWage("dmart",250,23,100);
+        ComputeWage("vmart",500,23,98);
     }
 }
