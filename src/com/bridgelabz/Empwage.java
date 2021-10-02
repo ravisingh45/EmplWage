@@ -1,16 +1,11 @@
 package com.bridgelabz;
 
 public class Empwage {
-    public static final int FULL_TIME = 1;
-    public static final int PART_TIME = 2;
     public static final int WAGE_PER_HOUR = 20;
     public static final int MAX_DAY = 20;
     public static final int MAX_HRS = 100;
 
-    static void ComputeWage() {
-        int wageHrs;
-        int totalWorkingDays = 0;
-        int totalEmpHrs = 0;
+     void ComputeWage(String company, int wageHrs,int totalWorkingDays,int totalEmpHrs ) {
         while (totalWorkingDays < MAX_DAY && totalEmpHrs <= MAX_HRS) {
             totalWorkingDays++;
             int check = (int) Math.floor(Math.random() * 10) % 3;
@@ -29,12 +24,14 @@ public class Empwage {
 
         }
         int totalEmpWage = totalEmpHrs * WAGE_PER_HOUR;
-        System.out.println("total wage = " + totalEmpWage);
+        System.out.println("Total wage of the company "+ company + " is = "+totalEmpWage);
     }
 
 
     public static void main(String[] args) {
-      Empwage empwage = new Empwage();
-      empwage.ComputeWage();
+      Empwage Dmart = new Empwage();
+        Dmart.ComputeWage("dmart",250,23,100);
+        Empwage Vmart = new Empwage();
+        Vmart.ComputeWage("vmart",500,23,98);
     }
 }
